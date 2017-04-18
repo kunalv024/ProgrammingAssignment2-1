@@ -1,5 +1,8 @@
+# Assignment: Caching the Inverse of a Matrix
 # Lexical Scoping Example
-#Week 3 Solution
+# Week 3 Solution
+
+#makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function( x= numeric()){
   s<- NULL
@@ -13,6 +16,13 @@ makeCacheMatrix <- function( x= numeric()){
   list(set=set,get=get,setSolve=setSolve, getSolve=getSolve)
 }
 
+# Assignment: Caching the Inverse of a Matrix
+# Lexical Scoping Example
+# Week 3 Solution
+
+#cacheSolve: 
+#This function computes the inverse of the special "matrix" returned by makeCacheMatrix above
+
 cacheSolve <- function(x, ...){
   s<- x$getSolve()
   if(!is.null(s))
@@ -24,5 +34,4 @@ cacheSolve <- function(x, ...){
   s<-solve(data,...)
   x$setSolve(s)
   s
-  
-}
+  }
